@@ -1,0 +1,17 @@
+{
+	"name": "city",
+	"properties": {
+		"description": "data of all cities",
+		"linkedServiceName": {
+			"referenceName": "ls_demo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`city`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

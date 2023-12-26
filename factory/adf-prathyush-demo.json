@@ -1,0 +1,9 @@
+{
+	"name": "adf-prathyush-demo",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "03580003-1b28-4d84-8a01-9c420c9926c5",
+		"tenantId": "61591e82-67d8-4cce-9990-bbcf3eb1aad1"
+	}
+}
