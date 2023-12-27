@@ -1,0 +1,12 @@
+{
+	"name": "Sqldbtables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adventure_works_db",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
