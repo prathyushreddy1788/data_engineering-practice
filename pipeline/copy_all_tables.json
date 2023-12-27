@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "select\ns.Name AS SchemaName,\nt.Name AS TableName\nFROM sys.tables t\nINNER JOIN sys.schemas s\nON t.schema_id = s.schema_id\nWHERE s.name = 'Sales'",
+						"sqlReaderQuery": "SELECT\n    s.Name AS SchemaName,\n    t.Name AS TableName\nFROM sys.tables t\nINNER JOIN sys.schemas s ON t.schema_id = s.schema_id\nWHERE s.name = 'Sales';\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -62,7 +62,7 @@
 								"source": {
 									"type": "SqlServerSource",
 									"sqlReaderQuery": {
-										"value": "@{concat('SELECT * FROM',item().SchemaName,'.',item().TableName)}",
+										"value": "@{concat('SELECT * FROM ',item().SchemaName,'.',item().TableName)}",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
