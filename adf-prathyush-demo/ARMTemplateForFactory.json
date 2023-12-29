@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_demo'"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://prathyushdemosa123.dfs.core.windows.net/"
@@ -38,6 +42,10 @@
 		"AzureDataLakeStorage3_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://prathyushdemosa123.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "data_transformation"
 		}
 	},
 	"variables": {
@@ -65,7 +73,7 @@
 						"typeProperties": {
 							"source": {
 								"type": "SqlServerSource",
-								"sqlReaderQuery": "select\ns.Name AS SchemaName,\nt.Name AS TableName\nFROM sys.tables t\nINNER JOIN sys.schemas s\nON t.schema_id = s.schema_id\nWHERE s.name = 'Sales'",
+								"sqlReaderQuery": "SELECT\n    s.Name AS SchemaName,\n    t.Name AS TableName\nFROM sys.tables t\nINNER JOIN sys.schemas s ON t.schema_id = s.schema_id\nWHERE s.name = 'Sales';\n",
 								"queryTimeout": "02:00:00",
 								"partitionOption": "None"
 							},
@@ -111,7 +119,7 @@
 										"source": {
 											"type": "SqlServerSource",
 											"sqlReaderQuery": {
-												"value": "@{concat('SELECT * FROM',item().SchemaName,'.',item().TableName)}",
+												"value": "@{concat('SELECT * FROM ',item().SchemaName,'.',item().TableName)}",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
@@ -544,6 +552,24 @@
 				"type": "SelfHosted",
 				"description": "used to connect sql server",
 				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-1048564941278988.8.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"existingClusterId": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+				}
 			},
 			"dependsOn": []
 		}

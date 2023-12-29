@@ -20,6 +20,9 @@
 		"ls_demo_connectionString": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://prathyushdemosa123.dfs.core.windows.net/"
 		},
@@ -28,6 +31,9 @@
 		},
 		"AzureDataLakeStorage3_properties_typeProperties_url": {
 			"value": "https://prathyushdemosa123.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "data_transformation"
 		}
 	}
 }
