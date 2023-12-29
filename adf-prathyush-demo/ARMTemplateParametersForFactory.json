@@ -14,13 +14,16 @@
 		"AzureDataLakeStorage3_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
 		"ls_adventure_works_db_connectionString": {
 			"value": ""
 		},
 		"ls_demo_connectionString": {
-			"value": ""
-		},
-		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
@@ -34,6 +37,12 @@
 		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"value": "data_transformation"
+		},
+		"AzureDatabricks2_properties_typeProperties_existingClusterId": {
+			"value": "1228-105710-z5ip2jid"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kv-prathyush-demo.vault.azure.net/"
 		}
 	}
 }
